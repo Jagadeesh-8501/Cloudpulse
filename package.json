@@ -28,7 +28,7 @@
     "engines": {
     "node": "20.17.0"
   },
-    "builds": [
+    "build": [
     {
       "src": "index.js",
       "use": "@vercel/node"
