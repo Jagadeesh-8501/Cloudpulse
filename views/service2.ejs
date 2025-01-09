@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <header>
+    <h1><%= pageTitle %></h1>
+  </header>
+
+  <div id="services-container">
+    <% services.forEach(function(service) { %>
+      <div class="service-card">
+        <h3><%= service.name %></h3>
+        <img src="/path-to-your-icons/<%= service.icon %>" alt="<%= service.name %> icon" class="service-icon">
+        <p><%= service.description %></p>
+        
+        <!-- Link to the service details page -->
+        <a href="/service/<%= service.slug %>" class="service-details-link">View Details</a>
+      </div>
+    <% }); %>
+  </div>
+
+  <script>
+    // Optionally, you can add interactivity here, like hover effects, etc.
+  </script>
+</body>
+</html>

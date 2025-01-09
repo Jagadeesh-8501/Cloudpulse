@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= pageTitle %></title>
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <header>
+    <h1><%= pageTitle %></h1>
+    <a href="/services">Back to All Services</a>
+  </header>
+
+  <div class="service-details">
+    <div class="service-info">
+      <img src="/path-to-your-icons/<%= service.icon %>" alt="<%= service.name %> icon" class="service-icon">
+      <h2><%= service.name %></h2>
+      <p><%= service.description %></p>
+      <h3>Benefits</h3>
+      <p><%= service.benefits %></p>
+      
+      <h3>Quote</h3>
+      <p><%= service.quote %></p>
+    </div>
+
+    <div class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-accordion">
+        <% service.faq.forEach(function(faq) { %>
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleAnswer(this)">
+              <%= faq.question %>
+            </button>
+            <div class="faq-answer">
+              <p><%= faq.answer %></p>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle FAQ answer visibility
+    function toggleAnswer(button) {
+      const answer = button.nextElementSibling;
+      answer.style.display = answer.style.display === "block" ? "none" : "block";
+    }
+  </script>
+</body>
+</html>
